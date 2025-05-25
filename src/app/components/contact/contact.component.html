@@ -1,0 +1,46 @@
+<div class="contact-card">
+  <div class="contact-header">
+    <div class="profile-picture">
+      <img src="https://cdn-icons-png.flaticon.com/512/8102/8102780.png" alt="Foto de perfil de {{ contact.name }}" class="img-fluid rounded-circle">
+    </div>
+    <h3 class="contact-name">{{ contact.name }}</h3>
+  </div>
+
+  <div class="contact-details">
+    <div class="detail-item">
+      <i class="fas fa-phone-alt"></i> <span>Teléfono:</span>
+      <p>{{ contact.phoneNumber }}</p>
+    </div>
+
+    <div class="detail-item">
+      <i class="fas fa-envelope"></i> <span>Correo:</span>
+      <p>{{ contact.email }}</p>
+    </div>
+
+    <div class="detail-item">
+      <i class="fas fa-map-marker-alt"></i> <span>Dirección:</span>
+      <p>{{ contact.address }}</p>
+    </div>
+
+    <div class="detail-item" *ngIf="contact.company">
+      <i class="fas fa-building"></i>
+      <span>Empresa:</span>
+      <p>{{ contact.company }}</p>
+    </div>
+
+    <div class="detail-item" *ngIf="contact.notes">
+      <i class="fas fa-sticky-note"></i>
+      <span>Notas:</span>
+      <p>{{ contact.notes }}</p>
+    </div>
+  </div>
+
+  <div class="contact-actions">
+    <button class="btn btn-primary" (click)="onEditContact()">
+      <i class="fas fa-edit"></i> Editar
+    </button>
+    <button class="btn btn-danger" (click)="onDeleteContact()">
+      <i class="fas fa-trash-alt"></i> Eliminar
+    </button>
+  </div>
+</div>

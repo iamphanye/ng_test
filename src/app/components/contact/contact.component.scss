@@ -1,0 +1,127 @@
+.contact-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 350px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.profile-picture {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 15px;
+  border: 3px solid #007bff;
+  box-shadow: 0 2px 5px rgba(0, 123, 255, 0.3);
+}
+
+.profile-picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.contact-name {
+  margin: 0;
+  font-size: 2em;
+  color: #343a40;
+  font-weight: 600;
+}
+
+.contact-details {
+  width: 100%;
+  text-align: left;
+  margin-bottom: 25px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  color: #495057;
+  font-size: 0.95em;
+}
+
+.detail-item i {
+  margin-right: 12px;
+  color: #007bff;
+  font-size: 1.3em;
+  min-width: 20px;
+  text-align: center;
+}
+
+.detail-item span {
+  font-weight: bold;
+  margin-right: 8px;
+  min-width: 70px;
+  color: #212529;
+}
+
+.detail-item p {
+  margin: 0;
+  flex-grow: 1;
+  word-break: break-word;
+}
+
+.contact-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.05em;
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn i {
+  margin-right: 8px;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+}

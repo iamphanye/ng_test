@@ -38,6 +38,6 @@ jobs:
        env:
          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
        run: |
-         npm run ng -- deploy --repo=https://github.com/docnico23c9/ng_test.git --name="nombre_de_usuario_en_github" --email="correo_electronico_de_tu_cuenta_de_github" --base-href=/ng_test/
+         npm run ng -- deploy --repo=https://github.com/iamphanye/ng_test.git --name="iamphanye" --email="estefaniamorenobravo2003@gmail.com" --base-href=/ng_test/
 
 

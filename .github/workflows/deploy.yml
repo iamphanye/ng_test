@@ -1,43 +1,30 @@
 name: Build & Deploy to GitHub Pages
 
-
 on:
- push:
-   branches: ["main", "feature/addtest"]
-
-
- # Allows you to run this workflow manually from the Actions tab
- workflow_dispatch:
-
+  push:
+    branches: ["main", "features/addtest"]
+  workflow_dispatch:
 
 jobs:
- # Build job
- deploy:
-   runs-on: ubuntu-latest
+  deploy:
+    runs-on: ubuntu-latest
 
+    steps:
+      - uses: actions/checkout@v4
 
-   steps:
-     - uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: latest
 
+      - name: Install dependencies
+        run: npm install
 
-     - name: Setup Node.js
-       uses: actions/setup-node@v4
-       with:
-         node-version: latest
+      - name: Build
+        run: npm run build -- --base-href=/ng_test/
 
-
-     - name: Install dependencies
-       run: npm install
-
-
-     - name: Build
-       run: npm run build
-
-
-     - name: Deploy to Github pages
-       env:
-         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-       run: |
-         npm run ng -- deploy --repo=https://github.com/iamphanye/ng_test.git --name="iamphanye" --email="estefaniamorenobravo2003@gmail.com" --base-href=/ng_test/
-
-
+      - name: Deploy to Github Pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          npx angular-cli-ghpages --dir=dist/ng_test --base-href=/ng_test/

@@ -1,0 +1,43 @@
+name: Build & Deploy to GitHub Pages
+
+
+on:
+ push:
+   branches: ["master"]
+
+
+ # Allows you to run this workflow manually from the Actions tab
+ workflow_dispatch:
+
+
+jobs:
+ # Build job
+ deploy:
+   runs-on: ubuntu-latest
+
+
+   steps:
+     - uses: actions/checkout@v4
+
+
+     - name: Setup Node.js
+       uses: actions/setup-node@v4
+       with:
+         node-version: latest
+
+
+     - name: Install dependencies
+       run: npm install
+
+
+     - name: Build
+       run: npm run build
+
+
+     - name: Deploy to Github pages
+       env:
+         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+       run: |
+         npm run ng -- deploy --repo=https://github.com/docnico23c9/ng_test.git --name="nombre_de_usuario_en_github" --email="correo_electronico_de_tu_cuenta_de_github" --base-href=/ng_test/
+
+

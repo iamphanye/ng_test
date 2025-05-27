@@ -36,7 +36,7 @@ jobs:
 
      - name: Deploy to Github pages
        env:
-         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+         GITHUB_TOKEN: ${{ secrets.FANY_TOKE }}
        run: |
          npm run ng -- deploy --repo=https://github.com/iamphanye/ng_test.git --name="iamphanye" --email="estefaniamorenobravo2003@gmail.com" --base-href=/ng_test/
 
